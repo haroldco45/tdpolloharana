@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarjeta Digital | Asadero HAR-ANA</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&family=Russo+One&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --rojo-harana: #b32d2e;
+            --amarillo-harana: #f4c430;
+            --oscuro: #111;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #1a1a1a;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 10px;
+        }
+
+        .card {
+            background: white;
+            width: 100%;
+            max-width: 400px;
+            border-radius: 30px;
+            overflow: hidden;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+            text-align: center;
+        }
+
+        /* CABECERA AMPLIADA - PARA QUE EL POLLO SE VEA COMPLETO */
+        .header {
+            background: var(--rojo-harana);
+            padding: 30px 20px 20px; /* Más espacio arriba */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .header img {
+            width: 90%; /* Logo más grande y protagonista */
+            max-width: 280px;
+            height: auto;
+            background: white;
+            padding: 15px;
+            border-radius: 20px;
+            border: 4px solid var(--amarillo-harana);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            margin-bottom: 15px;
+        }
+
+        .slogan-box {
+            color: white;
+            padding: 5px 15px;
+        }
+
+        .slogan-box h2 { font-family: 'Russo One', sans-serif; color: var(--amarillo-harana); margin: 0; font-size: 1.8rem; }
+        .slogan-text { font-size: 0.9rem; font-style: italic; opacity: 0.9; margin-top: 5px; font-weight: 600; }
+
+        /* BOTONERA LIMPIA DEBAJO DE LA CABECERA */
+        .button-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+            padding: 25px 15px;
+            background: #fff;
+        }
+
+        .btn-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .icon-box {
+            width: 55px;
+            height: 55px;
+            background: #f8f9fa;
+            border-radius: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-bottom: 8px;
+            border: 1px solid #eee;
+        }
+
+        .ic-tel { color: #007bff; }
+        .ic-ws { color: #25d366; }
+        .ic-map { color: #db4437; }
+        .ic-fb { color: #1877f2; }
+
+        .btn-label { font-size: 0.65rem; font-weight: 800; color: #333; text-transform: uppercase; }
+
+        /* INFO Y MENÚ */
+        .contact-info { padding: 10px 20px 20px; border-top: 1px solid #f0f0f0; }
+        .contact-info p { margin: 5px 0; font-size: 0.9rem; color: #444; }
+        
+        .menu-box { background: #fdf2f2; padding: 20px; margin: 0 20px 20px; border-radius: 20px; }
+        .menu-title { font-weight: 800; color: var(--rojo-harana); font-size: 0.85rem; margin-bottom: 12px; text-transform: uppercase; }
+        .menu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+        .menu-item { background: white; padding: 10px; border-radius: 10px; font-size: 0.75rem; color: #555; border: 1px solid #eee; font-weight: 600; }
+
+        /* FOOTER */
+        .footer { background: #000; padding: 25px; color: #888; font-size: 0.7rem; }
+        .vibras-link { color: var(--amarillo-harana); text-decoration: none; font-weight: bold; }
+
+        /* SISTEMA ANTI-PIRATERÍA / SUSCRIPCIÓN */
+        #bloqueo { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #000; z-index: 9999; justify-content: center; align-items: center; color: white; text-align: center; padding: 20px; }
+    </style>
+</head>
+<body>
+
+    <div id="bloqueo">
+        <div>
+            <h1 style="color:var(--amarillo-harana)">Suscripción Vencida</h1>
+            <p>Para reactivar su Tarjeta Digital, contacte a:</p>
+            <a href="https://wa.me/573117700431" style="color:white; font-size: 1.2rem; font-weight: bold;">Vibras Positivas (3117700431)</a>
+        </div>
+    </div>
+
+    <div class="card" id="main-content">
+        <div class="header">
+            <img src="https://raw.githubusercontent.com/haroldvibraspositivas/asaderoharana/main/har.png" alt="Restaurante HAR-ANA">
+            <div class="slogan-box">
+                <h2>HAR-ANA</h2>
+                <div class="slogan-text">"El pollo que se come con ganas"</div>
+            </div>
+        </div>
+
+        <div class="button-grid">
+            <a href="tel:3012851148" class="btn-item">
+                <div class="icon-box ic-tel"><i class="fa-solid fa-phone"></i></div>
+                <span class="btn-label">Llamar</span>
+            </a>
+            <a href="https://wa.me/573012851148" class="btn-item">
+                <div class="icon-box ic-ws"><i class="fa-brands fa-whatsapp"></i></div>
+                <span class="btn-label">WhatsApp</span>
+            </a>
+            <a href="https://maps.app.goo.gl/uXp5h6sY5z" class="btn-item">
+                <div class="icon-box ic-map"><i class="fa-solid fa-location-dot"></i></div>
+                <span class="btn-label">Ubicación</span>
+            </a>
+            <a href="https://www.facebook.com/PollosHaranaCaucasia" class="btn-item">
+                <div class="icon-box ic-fb"><i class="fa-brands fa-facebook-f"></i></div>
+                <span class="btn-label">Facebook</span>
+            </a>
+        </div>
+
+        <div class="contact-info">
+            <p><strong>Fijo:</strong> 839 18 73 | <strong>Cel:</strong> 301 285 1148</p>
+            <p>Cra. 20 N° 20c - 11 | Troncal del Caribe</p>
+            <p><strong>Caucasia - Antioquia</strong></p>
+        </div>
+
+        <div class="menu-box">
+            <div class="menu-title">📋 Especialidades a la Carta</div>
+            <div class="menu-grid">
+                <div class="menu-item">🍗 Pollo a la Brasa</div>
+                <div class="menu-item">🥩 Churrascos</div>
+                <div class="menu-item">🍢 Chuzo de Pollo</div>
+                <div class="menu-item">🍔 Hamburguesas</div>
+                <div class="menu-item">🍖 Costilla BBQ</div>
+                <div class="menu-item">🐟 Robalo Tentación</div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>App desarrollada por <br><a href="https://wa.me/573117700431" class="vibras-link">VIBRAS POSITIVAS (3117700431)</a></p>
+            <p>© Derechos de Autor 2026 - Caucasia</p>
+        </div>
+    </div>
+
+    <script>
+        // CONTROL DE FECHA - COLOMBIA REAL
+        const FECHA_LIMITE = "2027-03-14";
+        function chequear() {
+            const hoy = new Date().toISOString().split('T')[0];
+            if (hoy > FECHA_LIMITE) {
+                document.getElementById('bloqueo').style.display = 'flex';
+                document.getElementById('main-content').style.display = 'none';
+            }
+        }
+        chequear();
+    </script>
+</body>
+</html>
