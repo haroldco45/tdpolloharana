@@ -28,42 +28,58 @@
             background: white;
             width: 100%;
             max-width: 400px;
-            border-radius: 30px;
+            border-radius: 40px;
             overflow: hidden;
             box-shadow: 0 25px 50px rgba(0,0,0,0.5);
             text-align: center;
         }
 
+        /* --- AQUÍ ESTÁ EL ARREGLO DEL LOGO --- */
         .header {
             background: var(--rojo-harana);
-            padding: 40px 20px 30px;
+            padding: 30px 20px;
             display: flex;
             flex-direction: column;
             align-items: center;
         }
 
-        .header img {
-            width: 85%; 
-            max-width: 260px;
-            height: auto;
+        .logo-container {
+            width: 180px; /* Tamaño ideal */
+            height: 180px;
             background: white;
-            padding: 10px;
-            border-radius: 15px;
-            border: 4px solid var(--amarillo-harana);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-            margin-bottom: 25px;
-            margin-top: 15px;
-            transform: rotate(-90deg); /* Mantenemos el ajuste de rotación */
+            border-radius: 50%; /* Círculo perfecto */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 5px solid var(--amarillo-harana);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+            margin-bottom: 20px;
+            overflow: hidden; /* Corta cualquier borde sobrante */
         }
 
-        .slogan-box {
-            color: white;
-            padding: 5px 15px;
+        .logo-container img {
+            width: 90%; /* Ajuste interno para que no toque los bordes */
+            height: auto;
+            transform: none !important; /* ELIMINA LA ROTACIÓN JODIDA */
         }
 
-        .slogan-box h2 { font-family: 'Russo One', sans-serif; color: var(--amarillo-harana); margin: 0; font-size: 1.8rem; }
-        .slogan-text { font-size: 0.9rem; font-style: italic; opacity: 0.9; margin-top: 5px; font-weight: 600; }
+        .slogan-box h2 { 
+            font-family: 'Russo One', sans-serif; 
+            color: var(--amarillo-harana); 
+            margin: 0; 
+            font-size: 2rem; 
+            letter-spacing: 1px;
+        }
+        .slogan-text { 
+            color: white; 
+            font-size: 0.9rem; 
+            font-style: italic; 
+            opacity: 0.9; 
+            margin-top: 5px; 
+            font-weight: 600; 
+        }
 
+        /* --- BOTONES --- */
         .button-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -77,7 +93,10 @@
             flex-direction: column;
             align-items: center;
             text-decoration: none;
+            transition: 0.3s;
         }
+        
+        .btn-item:active { transform: scale(0.9); }
 
         .icon-box {
             width: 55px;
@@ -101,9 +120,9 @@
         .btn-label { font-size: 0.65rem; font-weight: 800; color: #333; text-transform: uppercase; }
 
         .contact-info { padding: 10px 20px 20px; border-top: 1px solid #f0f0f0; }
-        .contact-info p { margin: 5px 0; font-size: 0.9rem; color: #444; }
+        .contact-info p { margin: 5px 0; font-size: 0.95rem; color: #444; }
         
-        .menu-box { background: #fdf2f2; padding: 20px; margin: 0 20px 20px; border-radius: 20px; }
+        .menu-box { background: #fdf2f2; padding: 20px; margin: 0 20px 20px; border-radius: 20px; border: 1px solid #feebeb; }
         .menu-title { font-weight: 800; color: var(--rojo-harana); font-size: 0.85rem; margin-bottom: 12px; text-transform: uppercase; }
         .menu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
         .menu-item { background: white; padding: 10px; border-radius: 10px; font-size: 0.75rem; color: #555; border: 1px solid #eee; font-weight: 600; }
@@ -120,13 +139,15 @@
         <div>
             <h1 style="color:var(--amarillo-harana)">Suscripción Vencida</h1>
             <p>Para reactivar su Tarjeta Digital, contacte a:</p>
-            <a href="https://wa.me/573117700431" style="color:white; font-size: 1.2rem; font-weight: bold;">Vibras Positivas (3117700431)</a>
+            <a href="https://wa.me/573117700431" style="color:white; font-size: 1.2rem; font-weight: bold; text-decoration: none;">Vibras Positivas (3117700431)</a>
         </div>
     </div>
 
     <div class="card" id="main-content">
         <div class="header">
-            <img src="https://raw.githubusercontent.com/haroldco45/tdpolloharana/main/har.png" alt="Asadero HAR-ANA">
+            <div class="logo-container">
+                <img src="https://raw.githubusercontent.com/haroldco45/tdpolloharana/main/har.png" alt="Asadero HAR-ANA">
+            </div>
             <div class="slogan-box">
                 <h2>HAR-ANA</h2>
                 <div class="slogan-text">"El pollo que se come con ganas"</div>
@@ -142,11 +163,11 @@
                 <div class="icon-box ic-ws"><i class="fa-brands fa-whatsapp"></i></div>
                 <span class="btn-label">WhatsApp</span>
             </a>
-            <a href="https://www.google.com/maps/search/?api=1&query=Pollo+Har-ana+Caucasia" target="_blank" class="btn-item">
+            <a href="https://www.google.com/maps/search/?api=1&query=Cra.+20+N°+20c+-+11+Caucasia" target="_blank" class="btn-item">
                 <div class="icon-box ic-map"><i class="fa-solid fa-location-dot"></i></div>
                 <span class="btn-label">Ubicación</span>
             </a>
-            <a href="https://www.facebook.com/PolloHaranacaucasia/?locale=es_LA" target="_blank" class="btn-item">
+            <a href="https://www.facebook.com/PolloHaranacaucasia/" target="_blank" class="btn-item">
                 <div class="icon-box ic-fb"><i class="fa-brands fa-facebook-f"></i></div>
                 <span class="btn-label">Facebook</span>
             </a>
@@ -156,6 +177,7 @@
             <p><strong>Fijo:</strong> 839 18 73 | <strong>Cel:</strong> 301 285 1148</p>
             <p>Cra. 20 N° 20c - 11 | Troncal del Caribe</p>
             <p><strong>Caucasia - Antioquia</strong></p>
+            <p id="reloj" style="font-size: 0.75rem; color: #999; margin-top: 10px;"></p>
         </div>
 
         <div class="menu-box">
@@ -178,13 +200,23 @@
 
     <script>
         const FECHA_LIMITE = "2027-03-14";
+        
         function chequear() {
-            const hoy = new Date().toISOString().split('T')[0];
-            if (hoy > FECHA_LIMITE) {
+            // Obtener fecha actual en Colombia
+            const ahora = new Date();
+            const hoyIso = ahora.toLocaleDateString('en-CA', {timeZone: 'America/Bogota'});
+            
+            // Reloj en vivo
+            const tiempo = ahora.toLocaleTimeString('es-CO', {timeZone: 'America/Bogota'});
+            document.getElementById('reloj').innerText = "Hora Colombia: " + tiempo;
+
+            if (hoyIso > FECHA_LIMITE) {
                 document.getElementById('bloqueo').style.display = 'flex';
                 document.getElementById('main-content').style.display = 'none';
             }
         }
+        
+        setInterval(chequear, 1000);
         chequear();
     </script>
 </body>
