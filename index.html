@@ -10,12 +10,11 @@
         :root {
             --rojo-harana: #b32d2e;
             --amarillo-harana: #f4c430;
-            --oscuro: #111;
         }
 
         body {
             font-family: 'Poppins', sans-serif;
-            background-color: #1a1a1a;
+            background-color: #121212;
             margin: 0;
             display: flex;
             justify-content: center;
@@ -30,53 +29,50 @@
             max-width: 400px;
             border-radius: 40px;
             overflow: hidden;
-            box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.6);
             text-align: center;
         }
 
-        /* --- AQUÍ ESTÁ EL ARREGLO DEL LOGO --- */
+        /* --- SECCIÓN DEL LOGO OPTIMIZADA --- */
         .header {
             background: var(--rojo-harana);
-            padding: 30px 20px;
+            padding: 40px 20px 30px;
             display: flex;
             flex-direction: column;
             align-items: center;
         }
 
-        .logo-container {
-            width: 180px; /* Tamaño ideal */
-            height: 180px;
-            background: white;
-            border-radius: 50%; /* Círculo perfecto */
+        .logo-box {
+            width: 210px; /* Tamaño ideal para resaltar */
+            height: 210px;
             display: flex;
             justify-content: center;
             align-items: center;
-            border: 5px solid var(--amarillo-harana);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-            margin-bottom: 20px;
-            overflow: hidden; /* Corta cualquier borde sobrante */
         }
 
-        .logo-container img {
-            width: 90%; /* Ajuste interno para que no toque los bordes */
+        .logo-box img {
+            width: 100%;
             height: auto;
-            transform: none !important; /* ELIMINA LA ROTACIÓN JODIDA */
+            display: block;
+            /* Sombreado elegante para que el logo "salte" del fondo rojo */
+            filter: drop-shadow(0 10px 20px rgba(0,0,0,0.4));
+            transform: none !important;
         }
 
         .slogan-box h2 { 
             font-family: 'Russo One', sans-serif; 
             color: var(--amarillo-harana); 
-            margin: 0; 
-            font-size: 2rem; 
-            letter-spacing: 1px;
+            margin: 15px 0 0; 
+            font-size: 2.3rem; 
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
+
         .slogan-text { 
             color: white; 
-            font-size: 0.9rem; 
+            font-size: 1.05rem; 
             font-style: italic; 
-            opacity: 0.9; 
-            margin-top: 5px; 
-            font-weight: 600; 
+            font-weight: 600;
+            margin-top: 5px;
         }
 
         /* --- BOTONES --- */
@@ -85,7 +81,6 @@
             grid-template-columns: repeat(4, 1fr);
             gap: 12px;
             padding: 25px 15px;
-            background: #fff;
         }
 
         .btn-item {
@@ -93,23 +88,23 @@
             flex-direction: column;
             align-items: center;
             text-decoration: none;
-            transition: 0.3s;
+            transition: transform 0.2s;
         }
-        
+
         .btn-item:active { transform: scale(0.9); }
 
         .icon-box {
-            width: 55px;
-            height: 55px;
-            background: #f8f9fa;
-            border-radius: 15px;
+            width: 58px;
+            height: 58px;
+            background: #ffffff;
+            border-radius: 18px;
             display: flex;
             justify-content: center;
             align-items: center;
-            font-size: 1.5rem;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            font-size: 1.6rem;
+            box-shadow: 0 8px 15px rgba(0,0,0,0.08);
             margin-bottom: 8px;
-            border: 1px solid #eee;
+            border: 1px solid #f0f0f0;
         }
 
         .ic-tel { color: #007bff; }
@@ -117,18 +112,25 @@
         .ic-map { color: #db4437; }
         .ic-fb { color: #1877f2; }
 
-        .btn-label { font-size: 0.65rem; font-weight: 800; color: #333; text-transform: uppercase; }
+        .btn-label { font-size: 0.68rem; font-weight: 800; color: #333; text-transform: uppercase; }
 
-        .contact-info { padding: 10px 20px 20px; border-top: 1px solid #f0f0f0; }
-        .contact-info p { margin: 5px 0; font-size: 0.95rem; color: #444; }
+        .contact-info { padding: 10px 25px 25px; border-top: 1px solid #f5f5f5; }
+        .contact-info p { margin: 6px 0; font-size: 1rem; color: #444; }
         
-        .menu-box { background: #fdf2f2; padding: 20px; margin: 0 20px 20px; border-radius: 20px; border: 1px solid #feebeb; }
-        .menu-title { font-weight: 800; color: var(--rojo-harana); font-size: 0.85rem; margin-bottom: 12px; text-transform: uppercase; }
-        .menu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
-        .menu-item { background: white; padding: 10px; border-radius: 10px; font-size: 0.75rem; color: #555; border: 1px solid #eee; font-weight: 600; }
+        .menu-box { 
+            background: #fdf2f2; 
+            padding: 20px; 
+            margin: 0 20px 25px; 
+            border-radius: 25px; 
+            border: 1px dashed var(--rojo-harana); 
+        }
 
-        .footer { background: #000; padding: 25px; color: #888; font-size: 0.7rem; }
-        .vibras-link { color: var(--amarillo-harana); text-decoration: none; font-weight: bold; }
+        .menu-title { font-weight: 800; color: var(--rojo-harana); font-size: 0.9rem; margin-bottom: 12px; text-transform: uppercase; }
+        .menu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+        .menu-item { background: white; padding: 12px; border-radius: 12px; font-size: 0.75rem; color: #555; border: 1px solid #eee; font-weight: 600; }
+
+        .footer { background: #000; padding: 30px; color: #999; font-size: 0.75rem; }
+        .vibras-link { color: var(--amarillo-harana); text-decoration: none; font-weight: bold; font-size: 0.85rem; }
 
         #bloqueo { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #000; z-index: 9999; justify-content: center; align-items: center; color: white; text-align: center; padding: 20px; }
     </style>
@@ -137,16 +139,17 @@
 
     <div id="bloqueo">
         <div>
+            <i class="fa-solid fa-lock" style="font-size: 3rem; color: var(--amarillo-harana); margin-bottom: 20px;"></i>
             <h1 style="color:var(--amarillo-harana)">Suscripción Vencida</h1>
             <p>Para reactivar su Tarjeta Digital, contacte a:</p>
-            <a href="https://wa.me/573117700431" style="color:white; font-size: 1.2rem; font-weight: bold; text-decoration: none;">Vibras Positivas (3117700431)</a>
+            <a href="https://wa.me/573117700431" style="color:white; font-size: 1.3rem; font-weight: bold; text-decoration: none;">Vibras Positivas (3117700431)</a>
         </div>
     </div>
 
     <div class="card" id="main-content">
         <div class="header">
-            <div class="logo-container">
-                <img src="https://raw.githubusercontent.com/haroldco45/tdpolloharana/main/har.png" alt="Asadero HAR-ANA">
+            <div class="logo-box">
+                <img src="https://raw.githubusercontent.com/haroldco45/tdpolloharana/main/har.PNG" alt="Logo Asadero HAR-ANA">
             </div>
             <div class="slogan-box">
                 <h2>HAR - ANA</h2>
@@ -156,14 +159,14 @@
 
         <div class="button-grid">
             <a href="tel:3012851148" class="btn-item">
-                <div class="icon-box ic-tel"><i class="fa-solid fa-phone"></i></div>
+                <div class="icon-box ic-tel"><i class="fa-solid fa-phone-flip"></i></div>
                 <span class="btn-label">Llamar</span>
             </a>
             <a href="https://wa.me/573012851148" class="btn-item">
                 <div class="icon-box ic-ws"><i class="fa-brands fa-whatsapp"></i></div>
                 <span class="btn-label">WhatsApp</span>
             </a>
-            <a href="https://www.google.com/maps/search/?api=1&query=Cra.+20+N°+20c+-+11+Caucasia" target="_blank" class="btn-item">
+            <a href="https://www.google.com/maps/search/Cra.+20+N%C2%B0+20c+-+11+Caucasia+Antioquia" target="_blank" class="btn-item">
                 <div class="icon-box ic-map"><i class="fa-solid fa-location-dot"></i></div>
                 <span class="btn-label">Ubicación</span>
             </a>
@@ -177,11 +180,11 @@
             <p><strong>Fijo:</strong> 839 18 73 | <strong>Cel:</strong> 301 285 1148</p>
             <p>Cra. 20 N° 20c - 11 | Troncal del Caribe</p>
             <p><strong>Caucasia - Antioquia</strong></p>
-            <p id="reloj" style="font-size: 0.75rem; color: #999; margin-top: 10px;"></p>
+            <p id="reloj" style="font-size: 0.9rem; color: var(--rojo-harana); font-weight: 800; margin-top: 10px;"></p>
         </div>
 
         <div class="menu-box">
-            <div class="menu-title">📋 Especialidades a la Carta</div>
+            <div class="menu-title"><i class="fa-solid fa-utensils"></i> Especialidades a la Carta</div>
             <div class="menu-grid">
                 <div class="menu-item">🍗 Pollo a la Brasa</div>
                 <div class="menu-item">🥩 Churrascos</div>
@@ -194,21 +197,19 @@
 
         <div class="footer">
             <p>App desarrollada por <br><a href="https://wa.me/573117700431" class="vibras-link">VIBRAS POSITIVAS (3117700431)</a></p>
-            <p>© Derechos de Autor 2026 - Caucasia</p>
+            <p style="margin-top: 10px;">© Derechos de Autor 2026 - Caucasia</p>
         </div>
     </div>
 
     <script>
         const FECHA_LIMITE = "2027-03-14";
         
-        function chequear() {
-            // Obtener fecha actual en Colombia
+        function actualizar() {
             const ahora = new Date();
             const hoyIso = ahora.toLocaleDateString('en-CA', {timeZone: 'America/Bogota'});
+            const tiempo = ahora.toLocaleTimeString('es-CO', {timeZone: 'America/Bogota', hour12: true});
             
-            // Reloj en vivo
-            const tiempo = ahora.toLocaleTimeString('es-CO', {timeZone: 'America/Bogota'});
-            document.getElementById('reloj').innerText = "Hora Colombia: " + tiempo;
+            document.getElementById('reloj').innerText = "Colombia: " + tiempo;
 
             if (hoyIso > FECHA_LIMITE) {
                 document.getElementById('bloqueo').style.display = 'flex';
@@ -216,8 +217,8 @@
             }
         }
         
-        setInterval(chequear, 1000);
-        chequear();
+        setInterval(actualizar, 1000);
+        actualizar();
     </script>
 </body>
 </html>
