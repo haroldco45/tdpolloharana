@@ -34,25 +34,27 @@
             text-align: center;
         }
 
-        /* CABECERA AMPLIADA - LOGO DESDE GITHUB */
         .header {
             background: var(--rojo-harana);
-            padding: 30px 20px 20px;
+            padding: 40px 20px 30px;
             display: flex;
             flex-direction: column;
             align-items: center;
         }
 
+        /* MAGIA PARA ENDEREZAR LA FOTO ROTADA */
         .header img {
-            width: 95%; 
-            max-width: 300px;
+            width: 85%; 
+            max-width: 260px;
             height: auto;
             background: white;
             padding: 10px;
             border-radius: 15px;
             border: 4px solid var(--amarillo-harana);
             box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-            margin-bottom: 15px;
+            margin-bottom: 25px;
+            margin-top: 15px;
+            transform: rotate(-90deg); /* ESTA LÍNEA ENDEREZA EL POLLO */
         }
 
         .slogan-box {
@@ -63,7 +65,6 @@
         .slogan-box h2 { font-family: 'Russo One', sans-serif; color: var(--amarillo-harana); margin: 0; font-size: 1.8rem; }
         .slogan-text { font-size: 0.9rem; font-style: italic; opacity: 0.9; margin-top: 5px; font-weight: 600; }
 
-        /* BOTONERA IDENTIFICABLE */
         .button-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -100,7 +101,6 @@
 
         .btn-label { font-size: 0.65rem; font-weight: 800; color: #333; text-transform: uppercase; }
 
-        /* INFO Y MENÚ */
         .contact-info { padding: 10px 20px 20px; border-top: 1px solid #f0f0f0; }
         .contact-info p { margin: 5px 0; font-size: 0.9rem; color: #444; }
         
@@ -109,11 +109,9 @@
         .menu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
         .menu-item { background: white; padding: 10px; border-radius: 10px; font-size: 0.75rem; color: #555; border: 1px solid #eee; font-weight: 600; }
 
-        /* FOOTER VIBRAS POSITIVAS */
         .footer { background: #000; padding: 25px; color: #888; font-size: 0.7rem; }
         .vibras-link { color: var(--amarillo-harana); text-decoration: none; font-weight: bold; }
 
-        /* SISTEMA DE SUSCRIPCIÓN */
         #bloqueo { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #000; z-index: 9999; justify-content: center; align-items: center; color: white; text-align: center; padding: 20px; }
     </style>
 </head>
@@ -145,11 +143,11 @@
                 <div class="icon-box ic-ws"><i class="fa-brands fa-whatsapp"></i></div>
                 <span class="btn-label">WhatsApp</span>
             </a>
-            <a href="https://maps.app.goo.gl/NfN2WvM8hLz9xM7v5" class="btn-item">
+            <a href="https://www.google.com/maps/search/Cra.+20+N%C2%B0+20c+-+11+Caucasia" target="_blank" class="btn-item">
                 <div class="icon-box ic-map"><i class="fa-solid fa-location-dot"></i></div>
                 <span class="btn-label">Ubicación</span>
             </a>
-            <a href="https://www.facebook.com/PollosHaranaCaucasia" class="btn-item">
+            <a href="https://www.facebook.com/PollosHaranaCaucasia" target="_blank" class="btn-item">
                 <div class="icon-box ic-fb"><i class="fa-brands fa-facebook-f"></i></div>
                 <span class="btn-label">Facebook</span>
             </a>
@@ -180,10 +178,8 @@
     </div>
 
     <script>
-        // CONTROL DE FECHA - COLOMBIA REAL
         const FECHA_LIMITE = "2027-03-14";
         function chequear() {
-            // Obtener fecha actual en formato AAAA-MM-DD
             const hoy = new Date().toISOString().split('T')[0];
             if (hoy > FECHA_LIMITE) {
                 document.getElementById('bloqueo').style.display = 'flex';
